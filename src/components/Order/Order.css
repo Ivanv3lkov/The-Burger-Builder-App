@@ -5,4 +5,20 @@
     padding: 10px;
     margin: 10px auto;
     box-sizing: border-box;
+    position: relative;
+}
+
+#deleteIng {
+    font-size: 15px;
+    background-color: red;
+    padding: 0.2em 1em;
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    bottom: 5px
+}
+
+#deleteIng:hover {
+    color: white;
+    font-size: 18px;
 }

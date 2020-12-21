@@ -81,3 +81,23 @@ export const fetchOrders = (token, userId) => {
             } );
     };
 };
+
+export const deleteCurrentOrder = orderId => {
+    return {
+        type: actionTypes.DELETE_ORDER,
+        id: orderId
+    }
+}
+
+
+export const deleteOrder = orderId => {
+    return dispatch => {
+        const token = localStorage.getItem('token');
+        axios.delete(`orders/${orderId}.json?auth=${token}`)
+        .then(data => {
+            dispatch(deleteCurrentOrder(orderId))
+        }).catch(error => {
+            dispatch(fetchOrdersFail(error));
+        })
+    }
+}

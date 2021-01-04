@@ -69,9 +69,11 @@ const burgerBuilder = props => {
   const disabledInfo = {
     ...ings
   };
+
   for (let key in disabledInfo) {
     disabledInfo[key] = disabledInfo[key] <= 0;
   }
+
   let orderSummary = null;
   let burger = error ? <p>Ingredients can't be loaded!</p> : <Spinner />;
 
@@ -90,6 +92,7 @@ const burgerBuilder = props => {
         />
       </Auxiliary>
     );
+    
     orderSummary = (
       <OrderSummary
         ingredients={ings}

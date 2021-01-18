@@ -12,10 +12,6 @@ import * as actions from '../../store/actions/index';
 import axios from '../../axios-orders';
 
 const burgerBuilder = props => {
-  // constructor(props) {
-  //     super(props);
-  //     this.state = {...}
-  // }
   const [purchasing, setPurchasing] = useState(false);
 
   const dispatch = useDispatch();

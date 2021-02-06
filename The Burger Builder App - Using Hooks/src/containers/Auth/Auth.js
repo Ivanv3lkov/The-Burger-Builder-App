@@ -8,6 +8,7 @@ import Spinner from '../../components/UI/Spinner/Spinner';
 import classes from './Auth.css';
 import * as actions from '../../store/actions/index';
 import { updateObject, checkValidity } from '../../shared/utility';
+import {signInWithGoogle} from '../../firebase/sign-in-with-google';
 
 const auth = props => {
   const [authForm, setAuthForm] = useState({
@@ -120,6 +121,7 @@ const auth = props => {
       <Button clicked={switchAuthModeHandler} btnType="Danger">
         SWITCH TO {isSignup ? 'SIGNIN' : 'SIGNUP'}
       </Button>
+      <Button clicked={signInWithGoogle} btnType="Danger">SIGN IN WITH GOOGLE</Button>
     </div>
   );
 };
